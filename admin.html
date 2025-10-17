@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                Learning Management System
+            </a>
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span>Admin</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1><i class="fas fa-cog"></i> Quản lý hệ thống</h1>
+        <ul class="nav-menu">
+            <li><a href="#" class="nav-link active" data-section="courses">Quản lý khóa học</a></li>
+            <li><a href="#" class="nav-link" data-section="questions">Quản lý câu hỏi</a></li>
+        </ul>
+
+        <div class="section">
+            <!-- Phần khóa học -->
+            <div id="courses" class="content-section">
+                <h2>Quản lý khóa học</h2>
+                <button class="add-button" id="open-add-course-modal">
+                    <i class="fas fa-plus"></i> Thêm khóa học
+                </button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên khóa học</th>
+                            <th>Mô tả</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="course-list">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Phần câu hỏi -->
+            <div id="questions" class="content-section" style="display: none;">
+                <h2>Quản lý câu hỏi</h2>
+                <button class="add-button" id="add-question">
+                    <i class="fas fa-plus"></i> Thêm câu hỏi
+                </button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Câu hỏi</th>
+                            <th>Đáp án</th>
+                            <th>Khóa học</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="question-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal thêm khóa học -->
+        <div id="course-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-course-modal">&times;</span>
+                <h2>Thêm / Sửa Khóa Học</h2>
+                <form id="course-form">
+                    <input type="hidden" id="course-id">
+                    <div>
+                        <label for="course-name">Tên khóa học:</label>
+                        <input type="text" id="course-name" required>
+                    </div>
+                    <div>
+                        <label for="course-description">Mô tả:</label>
+                        <textarea id="course-description" required></textarea>
+                    </div>
+                    <button type="submit" class="save-button" >Lưu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-copyright">
+                © 2025 Learning Management System. All rights reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-question-circle"></i> Trợ giúp</a>
+                <a href="#"><i class="fas fa-envelope"></i> Liên hệ</a>
+                <a href="#"><i class="fas fa-shield-alt"></i> Chính sách</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
