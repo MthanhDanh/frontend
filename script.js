@@ -32,7 +32,7 @@ class Course {
 
 // Hiển thị danh sách khóa học
 if (courseList) {
-    fetch('http://localhost:3000/courses')
+    fetch('https://my-json-server.typicode.com/MthanhDanh/json/courses')
         .then(response => response.json())
         .then(courses => {
             let html = "";
@@ -62,7 +62,7 @@ if (openAddCourseModal) {
                 name: courseNameInput.value,
                 description: courseDescriptionInput.value
             };
-            fetch(`http://localhost:3000/courses/${updateCourse.id}`, {
+            fetch(`https://my-json-server.typicode.com/MthanhDanh/json/courses/${updateCourse.id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updateCourse)
@@ -76,7 +76,7 @@ if (openAddCourseModal) {
                 name: courseNameInput.value,
                 description: courseDescriptionInput.value
             };
-            fetch('http://localhost:3000/courses', {
+            fetch('https://my-json-server.typicode.com/MthanhDanh/json/courses', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newCourse)
@@ -97,7 +97,7 @@ if (courseList) {
             // Thêm thuộc tính để form chuyển sang chế độ edit
             courseForm.setAttribute('data-mode', 'edit');
 
-            fetch(`http://localhost:3000/courses/${id}`)
+            fetch(`https://my-json-server.typicode.com/MthanhDanh/json/courses/${id}`)
                 .then(response => response.json())
                 .then(course => {
                     console.log(course);
@@ -118,7 +118,7 @@ if (courseList) {
             const button = event.target.closest('.delete-button');
             const id = button.getAttribute('data-id');
             if (confirm('Bạn có chắc muốn xóa khóa học này?')) {
-                fetch(`http://localhost:3000/courses/${id}`, {
+                fetch(`https://my-json-server.typicode.com/MthanhDanh/json/courses/${id}`, {
                     method: 'DELETE'
                 })
                     .then(() => {
